@@ -1,1 +1,1 @@
-docker run chrome
+docker restart chrome 
