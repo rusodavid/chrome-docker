@@ -1,1 +1,2 @@
-docker restart chrome 
+xhost local:root
+docker start -i chrome 
