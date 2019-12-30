@@ -1,1 +1,1 @@
-docker restart chrome 
+docker restart chrome-ubuntu 
