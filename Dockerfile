@@ -1,6 +1,5 @@
 # Base docker image
 FROM ubuntu:18.04
-LABEL maintainer "Jessie Frazelle <jess@linux.com>"
 
 # Install Chrome
 RUN apt-get update && apt-get install -y \
@@ -31,12 +30,6 @@ RUN apt-get update && apt-get install -y build-essential \
         lsb-release
 RUN apt-get --purge remove -y nvidia*
 RUN apt-get install wget
-
-
-#ADD NVIDIA-DRIVER.run /tmp/NVIDIA-DRIVER.run 
-#ADD cuda_10.2.89_440.33.01_linux.run /tmp/cuda_10.2.89_440.33.01_linux.run
-#RUN sh /tmp/NVIDIA-DRIVER.run -a -s --no-kernel-module 
-#RUN rm -rf /tmp/selfgz7
 
 ARG NVIDIA_DRIVER=NVIDIA-Linux-x86_64-440.44.run
 RUN wget http://es.download.nvidia.com/XFree86/Linux-x86_64/440.44/${NVIDIA_DRIVER} --progress=dot:giga -P /tmp
